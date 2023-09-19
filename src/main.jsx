@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 import Meals from './Components/Meals/Meals.jsx'
 import Contact from './Components/Contact/Contact.jsx'
+import MealDetails from './Components/MealDetails/MealDetails'
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
         path: "contacts",
         element: <Contact />
         
+      },
+      {
+        path: "meal/:mealId",
+        element: <MealDetails />,
+        loader: ({params}) => fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${params.mealId}`)
       }
     ]
   },
