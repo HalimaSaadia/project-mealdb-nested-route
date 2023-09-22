@@ -13,6 +13,7 @@ const Meal = ({ meal }) => {
         <img
           src={strMealThumb}
           alt="Shoes"
+          className="drop-shadow-lg"
         />
       </figure>
       <div className="card-body">
